@@ -16,5 +16,13 @@ namespace PublicAgentDesktop.Ui.Dialogs
         {
             InitializeComponent();
         }
+
+        private void signUpButton_Click(object sender, EventArgs e)
+        {
+            if (new SignUpDialog().ShowDialog(this) == DialogResult.OK)
+            {
+                //do something else
+            }
+        }
     }
 }

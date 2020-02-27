@@ -34,9 +34,9 @@
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.credentialsGroupBox = new System.Windows.Forms.GroupBox();
             this.settingsGroupBox = new System.Windows.Forms.GroupBox();
-            this.languageLabel = new System.Windows.Forms.Label();
-            this.languageComboBox = new System.Windows.Forms.ComboBox();
             this.systemStyleCheckBox = new System.Windows.Forms.CheckBox();
+            this.languageComboBox = new System.Windows.Forms.ComboBox();
+            this.languageLabel = new System.Windows.Forms.Label();
             this.signInButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.signUpButton = new System.Windows.Forms.Button();
@@ -102,23 +102,6 @@
             this.settingsGroupBox.TabStop = false;
             this.settingsGroupBox.Text = "Settings";
             // 
-            // languageLabel
-            // 
-            this.languageLabel.AutoSize = true;
-            this.languageLabel.Location = new System.Drawing.Point(6, 21);
-            this.languageLabel.Name = "languageLabel";
-            this.languageLabel.Size = new System.Drawing.Size(58, 13);
-            this.languageLabel.TabIndex = 0;
-            this.languageLabel.Text = "Language:";
-            // 
-            // languageComboBox
-            // 
-            this.languageComboBox.FormattingEnabled = true;
-            this.languageComboBox.Location = new System.Drawing.Point(70, 18);
-            this.languageComboBox.Name = "languageComboBox";
-            this.languageComboBox.Size = new System.Drawing.Size(121, 21);
-            this.languageComboBox.TabIndex = 1;
-            // 
             // systemStyleCheckBox
             // 
             this.systemStyleCheckBox.AutoSize = true;
@@ -128,6 +111,23 @@
             this.systemStyleCheckBox.TabIndex = 2;
             this.systemStyleCheckBox.Text = "Use system style";
             this.systemStyleCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // languageComboBox
+            // 
+            this.languageComboBox.FormattingEnabled = true;
+            this.languageComboBox.Location = new System.Drawing.Point(70, 18);
+            this.languageComboBox.Name = "languageComboBox";
+            this.languageComboBox.Size = new System.Drawing.Size(121, 21);
+            this.languageComboBox.TabIndex = 1;
+            // 
+            // languageLabel
+            // 
+            this.languageLabel.AutoSize = true;
+            this.languageLabel.Location = new System.Drawing.Point(6, 21);
+            this.languageLabel.Name = "languageLabel";
+            this.languageLabel.Size = new System.Drawing.Size(58, 13);
+            this.languageLabel.TabIndex = 0;
+            this.languageLabel.Text = "Language:";
             // 
             // signInButton
             // 
@@ -156,6 +156,7 @@
             this.signUpButton.TabIndex = 8;
             this.signUpButton.Text = "Sign up";
             this.signUpButton.UseVisualStyleBackColor = true;
+            this.signUpButton.Click += new System.EventHandler(this.signUpButton_Click);
             // 
             // SignInDialog
             // 

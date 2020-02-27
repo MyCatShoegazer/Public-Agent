@@ -47,8 +47,9 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.photoPictureBox = new System.Windows.Forms.PictureBox();
             this.photoGroupBox = new System.Windows.Forms.GroupBox();
-            this.browsePhotoButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.browsePhotoButton = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.additionalCredentialsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
@@ -201,6 +202,7 @@
             this.applyButton.TabIndex = 16;
             this.applyButton.Text = "Apply";
             this.applyButton.UseVisualStyleBackColor = true;
+            this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
             // 
             // cancelButton
             // 
@@ -232,16 +234,6 @@
             this.photoGroupBox.TabStop = false;
             this.photoGroupBox.Text = "Photo";
             // 
-            // browsePhotoButton
-            // 
-            this.browsePhotoButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.browsePhotoButton.Location = new System.Drawing.Point(3, 132);
-            this.browsePhotoButton.Name = "browsePhotoButton";
-            this.browsePhotoButton.Size = new System.Drawing.Size(165, 23);
-            this.browsePhotoButton.TabIndex = 20;
-            this.browsePhotoButton.Text = "Browse...";
-            this.browsePhotoButton.UseVisualStyleBackColor = true;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -256,6 +248,23 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(171, 158);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // browsePhotoButton
+            // 
+            this.browsePhotoButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.browsePhotoButton.Location = new System.Drawing.Point(3, 132);
+            this.browsePhotoButton.Name = "browsePhotoButton";
+            this.browsePhotoButton.Size = new System.Drawing.Size(165, 23);
+            this.browsePhotoButton.TabIndex = 20;
+            this.browsePhotoButton.Text = "Browse...";
+            this.browsePhotoButton.UseVisualStyleBackColor = true;
+            this.browsePhotoButton.Click += new System.EventHandler(this.browsePhotoButton_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "photo";
+            this.openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
+            this.openFileDialog.Title = "Choose photo";
             // 
             // SignUpDialog
             // 
@@ -305,5 +314,6 @@
         private System.Windows.Forms.GroupBox photoGroupBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button browsePhotoButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
