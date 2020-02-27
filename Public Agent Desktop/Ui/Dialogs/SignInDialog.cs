@@ -47,7 +47,7 @@ namespace PublicAgentDesktop.Ui.Dialogs
                 var query = from u in context.Users
                         join g in context.Groups on u.Group equals g
                         where u.Login == this.loginTextBox.Text && u.Password == password
-                        select new { Login = u.Login, Password = u.Password, Group = g };
+                        select new { u.Login, u.Password, Group = g };
 
                 /*
                  * Получаем результаты запроса.
