@@ -78,6 +78,12 @@
     <Compile Include="Ui\Dialogs\SignInDialog.Designer.cs">
       <DependentUpon>SignInDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Dialogs\SignUpDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Dialogs\SignUpDialog.Designer.cs">
+      <DependentUpon>SignUpDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ui\MDIMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <EmbeddedResource Include="Ui\Dialogs\SignInDialog.resx">
       <DependentUpon>SignInDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Dialogs\SignUpDialog.resx">
+      <DependentUpon>SignUpDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ui\MDIMainForm.resx">
       <DependentUpon>MDIMainForm.cs</DependentUpon>
