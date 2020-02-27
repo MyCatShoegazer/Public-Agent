@@ -7,10 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Public Agent Desktop", "Pub
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CLEAN_DATA|Any CPU = CLEAN_DATA|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{670A6319-C82F-4F0A-9FE4-A41B66CEAB93}.CLEAN_DATA|Any CPU.ActiveCfg = CLEAN_DATA|Any CPU
+		{670A6319-C82F-4F0A-9FE4-A41B66CEAB93}.CLEAN_DATA|Any CPU.Build.0 = CLEAN_DATA|Any CPU
 		{670A6319-C82F-4F0A-9FE4-A41B66CEAB93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{670A6319-C82F-4F0A-9FE4-A41B66CEAB93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{670A6319-C82F-4F0A-9FE4-A41B66CEAB93}.Release|Any CPU.ActiveCfg = Release|Any CPU

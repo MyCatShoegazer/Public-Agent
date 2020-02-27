@@ -42,6 +42,17 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CLEAN_DATA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\CLEAN_DATA\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CLEAN_DATA</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
@@ -65,11 +76,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\PublicAgentDbModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PublicAgentDbModel.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Data\AlwaysDropDataInitializer.cs" />
+    <Compile Include="Data\DropOnModelChangeDataInitializer.cs" />
+    <Compile Include="Data\Models\BaseEntity.cs" />
+    <Compile Include="Data\Models\Group.cs" />
+    <Compile Include="Data\PublicAgentDbContext.cs" />
+    <Compile Include="Data\Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ui\Dialogs\SignInDialog.cs">
@@ -90,6 +102,7 @@
     <Compile Include="Ui\MDIMainForm.Designer.cs">
       <DependentUpon>MDIMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utility\TypeExtensions.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -110,13 +123,6 @@
       <DependentUpon>MDIMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
-    <EntityDeploy Include="Data\PublicAgentDbModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PublicAgentDbModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Data\PublicAgentDbModel.edmx.diagram">
-      <DependentUpon>PublicAgentDbModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
