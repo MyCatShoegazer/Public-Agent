@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PublicAgentDesktop.Data;
+using PublicAgentDesktop.Data.Models;
+using System.Linq.Expressions;
 
 namespace PublicAgentDesktop
 {

@@ -24,12 +24,6 @@ namespace PublicAgentDesktop.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             /*
-             * Во время создания модели задаём
-             * имя схемы данных.
-             */
-            modelBuilder.HasDefaultSchema("public");
-
-            /*
              * Выставляем соответствие имени модели
              * и имени таблицы в базе данных.
              */

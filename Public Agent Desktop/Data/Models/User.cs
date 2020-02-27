@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Drawing;
 
 namespace PublicAgentDesktop.Data.Models
 {
@@ -16,7 +15,7 @@ namespace PublicAgentDesktop.Data.Models
         private string _phone;
         private string _lastName;
         private string _firstName;
-        private Bitmap _photo;
+        private byte[] _photo;
 
         private Group _group;
 
@@ -124,9 +123,9 @@ namespace PublicAgentDesktop.Data.Models
         /// <summary>
         ///     Фотография пользователя.
         /// </summary>
-        public Bitmap Photo 
+        public byte[] Photo 
         {
-            get => this._photo == null ? new Bitmap(1, 1) : this._photo;
+            get => this._photo == null ? new byte[0] : this._photo;
             set {
                 this._photo = value;
                 base.OnPropertyChanged();
