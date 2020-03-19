@@ -29,6 +29,7 @@ namespace PublicAgentDesktop.Data
              */
             modelBuilder.Entity<Group>().ToTable("GroupInfo");
             modelBuilder.Entity<User>().ToTable("UserInfo");
+            modelBuilder.Entity<Client>().ToTable("ClientInfo");
         }
         
         /// <summary>
@@ -40,5 +41,10 @@ namespace PublicAgentDesktop.Data
         ///     Коллекция пользователей.
         /// </summary>
         public virtual DbSet<User> Users { get; set; }
+
+        /// <summary>
+        ///     Коллекция клиентов.
+        /// </summary>
+        public virtual DbSet<Client> Clients { get; set; }
     }
 }

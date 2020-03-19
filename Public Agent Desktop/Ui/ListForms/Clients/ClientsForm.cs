@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PublicAgentDesktop.Ui
+namespace PublicAgentDesktop.Ui.ListForms.Clients
 {
-    public partial class form : Form
+    public partial class ClientsForm : Form
     {
-        public form()
+        public ClientsForm()
         {
             InitializeComponent();
         }

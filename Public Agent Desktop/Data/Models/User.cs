@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace PublicAgentDesktop.Data.Models
 {
@@ -18,6 +19,7 @@ namespace PublicAgentDesktop.Data.Models
         private byte[] _photo;
 
         private Group _group;
+        private ICollection<Client> _clients;
 
         /// <summary>
         ///     Уникальный идентификатор пользователя
@@ -139,6 +141,19 @@ namespace PublicAgentDesktop.Data.Models
             get => this._group;
             set {
                 this._group = value;
+                base.OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        ///     Список клиентов
+        /// </summary>
+        public ICollection<Client> Clients
+        {
+            get => this._clients;
+            set
+            {
+                this._clients = value;
                 base.OnPropertyChanged();
             }
         }

@@ -1,6 +1,6 @@
-﻿namespace PublicAgentDesktop.Ui
+﻿namespace PublicAgentDesktop.Ui.ListForms.Clients
 {
-    partial class form
+    partial class ClientsForm
     {
         /// <summary>
         /// Required designer variable.

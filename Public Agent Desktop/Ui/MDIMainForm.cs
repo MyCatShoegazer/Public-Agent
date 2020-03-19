@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PublicAgentDesktop.Ui.ListForms.Clients;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -117,6 +118,11 @@ namespace PublicAgentDesktop.Ui
             {
                 Application.Exit();
             }
+        }
+
+        private void показатьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ClientsForm { MdiParent = this }.Show();
         }
     }
 }
