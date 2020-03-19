@@ -38,7 +38,7 @@ namespace PublicAgentDesktop.Data.Models
         ///     Логин пользователя, используемый для
         ///     авторизации в информационной системе.
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Login must be not empty!")]
         [MaxLength(20)]
         public string Login 
         {
@@ -53,7 +53,7 @@ namespace PublicAgentDesktop.Data.Models
         ///     Пароль пользователя, используемый для
         ///     авторизации в информационной системе.
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Password must be not empty!")]
         [MaxLength(255)]
         public string Password 
         {
@@ -67,7 +67,7 @@ namespace PublicAgentDesktop.Data.Models
         /// <summary>
         ///     Адрес электронной почты пользователя.
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Email address must be not empty!")]
         [EmailAddress]
         public string Email 
         {
@@ -81,7 +81,7 @@ namespace PublicAgentDesktop.Data.Models
         /// <summary>
         ///     Контактный номер телефона.
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Phone number must be not empty!")]
         [Phone]
         public string Phone 
         {
@@ -95,7 +95,7 @@ namespace PublicAgentDesktop.Data.Models
         /// <summary>
         ///     Фамилия пользователя.
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Last name must be not empty!")]
         [MaxLength(20)]
         public string LastName 
         {
@@ -109,7 +109,7 @@ namespace PublicAgentDesktop.Data.Models
         /// <summary>
         ///     Имя пользователя.
         /// </summary>
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "First name must be not empty!")]
         [MaxLength(20)]
         public string FirstName 
         {

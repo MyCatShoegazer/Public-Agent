@@ -16,11 +16,11 @@ namespace PublicAgentDesktop.Utility
         /// <returns>Возвращает MD5 сумму строки.</returns>
         public static string GetMD5(this string source)
         {
-            var bytes = Encoding.Default.GetBytes(source);
+            var bytes = Encoding.UTF8.GetBytes(source);
             using (var provider = new MD5CryptoServiceProvider())
                 bytes = provider.ComputeHash(bytes);
 
-            return Encoding.Default.GetString(bytes);
+            return Encoding.UTF8.GetString(bytes);
         }
     }
 }

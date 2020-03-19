@@ -19,7 +19,7 @@ namespace PublicAgentDesktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Ui.Dialogs.SignInDialog());
+            Application.Run(new Ui.MDIMainForm());
         }
     }
 }

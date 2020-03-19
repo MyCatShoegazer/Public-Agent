@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using PublicAgentDesktop.Data;
+using PublicAgentDesktop.Data.Models;
+using PublicAgentDesktop.Utility;
+using System;
+using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
-using PublicAgentDesktop;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace PublicAgentDesktop.Ui.Dialogs
 {
@@ -33,7 +31,57 @@ namespace PublicAgentDesktop.Ui.Dialogs
 
         private void applyButton_Click(object sender, EventArgs e)
         {
-            
+            if (this.passwordTextBox.Text != this.rePasswordTextBox.Text)
+            {
+                MessageBox.Show(
+                    "Password are not the same. Please check and try again.",
+                    "Registration error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            using (var context = new PublicAgentDbContext())
+            {
+                var user = context.Users.FirstOrDefault(x => x.Login == this.loginTextBox.Text);
+                if (user != null)
+                {
+                    MessageBox.Show(
+                        "User with this login or password already registered. Please, choose another one.",
+                        "Registration error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
+                }
+
+                try
+                {
+                    user = new User
+                    {
+                        Login = this.loginTextBox.Text,
+                        Password = this.passwordTextBox.Text,
+                        Email = this.emailTextBox.Text,
+                        LastName = this.lastNameTextBox.Text,
+                        FirstName = this.firstNameTextBox.Text,
+                        Phone = this.phoneMaskedTextBox.Text,
+                        Photo = (byte[])(new ImageConverter()).ConvertTo(this.photoPictureBox.Image, typeof(byte[])),
+                        Group = context.Groups.FirstOrDefault(x => x.Name == "Пользователи")
+                    };
+
+                    context.Users.Add(user);
+                    Debug.WriteLine($"Rows affected[Registration]: {context.SaveChanges()}");
+
+                    this.DialogResult = DialogResult.OK;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        ex.Message,
+                        "Registration error!",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

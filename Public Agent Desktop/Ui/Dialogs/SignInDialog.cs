@@ -38,7 +38,7 @@ namespace PublicAgentDesktop.Ui.Dialogs
                 /*
                  * Зашифруем введённый пароль перед поиском.
                  */
-                var password = this.passwordTextBox.Text.GetMD5();
+                var password = this.passwordTextBox.Text;
 
                 /*
                  * Ищем пользователя с заданным сочетанием

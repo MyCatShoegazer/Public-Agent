@@ -26,9 +26,9 @@ namespace PublicAgentDesktop.Data
             /*
              * Группы привилегий по умолчанию.
              */
-            var groups = new List<Group> 
+            var groups = new List<Group>
             {
-                new Group 
+                new Group
                 {
                     Name = "Администраторы",
                     Description = "Администраторы информационной системы. Обладают наивысшими правами."
@@ -51,7 +51,7 @@ namespace PublicAgentDesktop.Data
             var root = new User
             {
                 Login = "root",
-                Password = "1234".GetMD5(),
+                Password = "1234",
                 Email = "root@root.org",
                 Phone = "9990000",
                 LastName = "Root",

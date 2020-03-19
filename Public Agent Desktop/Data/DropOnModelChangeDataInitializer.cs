@@ -43,7 +43,7 @@ namespace PublicAgentDesktop.Data
             var root = new User
             {
                 Login = "root",
-                Password = "1234".GetMD5(),
+                Password = "1234",
                 Email = "root@root.org",
                 Phone = "9990000",
                 LastName = "Root",

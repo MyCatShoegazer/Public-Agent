@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -101,6 +102,20 @@ namespace PublicAgentDesktop.Ui
             foreach (Form childForm in MdiChildren)
             {
                 childForm.Close();
+            }
+        }
+
+        private void MDIMainForm_Load(object sender, EventArgs e)
+        {
+            var result = new Dialogs.SignInDialog().ShowDialog(this);
+            if (result == DialogResult.OK)
+            {
+                var name = Thread.CurrentPrincipal.Identity.Name;
+                this.toolStripStatusLabel.Text = $"Welcome: {name}";
+            }
+            else
+            {
+                Application.Exit();
             }
         }
     }

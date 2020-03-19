@@ -22,5 +22,16 @@ namespace PublicAgentDesktop.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Host=localhost;Database=PublicAgentDb;Username=postgres;Persist Security Info=Tru" +
+            "e")]
+        public string PublicAgentDbConnectionString {
+            get {
+                return ((string)(this["PublicAgentDbConnectionString"]));
+            }
+        }
     }
 }

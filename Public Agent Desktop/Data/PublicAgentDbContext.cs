@@ -12,7 +12,7 @@ namespace PublicAgentDesktop.Data
         ///     Инициализирует контекст данных приложения.
         /// </summary>
         public PublicAgentDbContext()
-            : base("name=PublicAgentDbContext")
+            : base("name=PublicAgentDbPostgre")
         {
 #if CLEAN_DATA
             Database.SetInitializer(new AlwaysDropDataInitializer());
